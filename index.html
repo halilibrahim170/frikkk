@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-scrapbook-source="https://armanidogsol.xyz/" data-scrapbook-create="20241124120516936"
+    data-scrapbook-title="ARMANI DOG">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRIC</title>
+    <link rel="icon" type="image/png" href="lggg-MQY6Rl0KflAdkdOARK88WHWjFligv9.jpg">
+    <link rel="apple-touch-icon" href="https://armanidogsol.xyz/images/lggg-MQY6Rl0KflAdkdOARK88WHWjFligv9.jpg">
+    <link href="css2.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'DynaPuff', cursive;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #C4A484;
+            color: #594E4A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav {
+            background-color: #c4a4849d;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.2s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        .nav-links a {
+            color: #C4660F;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #9d174d;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            background-image: url("back.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 6rem 0 2rem;
+            margin-bottom: 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, rgba(251, 207, 232, 0), #C4A484);
+        }
+
+        .hero-content .slider {
+            margin: 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .hero-content .social-links {
+            margin-bottom: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .slider {
+            position: relative;
+            height: 24rem;
+            max-width: 800px;
+            margin: 2rem auto 3rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon {
+            from {
+                box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #C4660F, 0 0 14px #C4660F, 0 0 16px #C4660F, 0 0 20px #C4660F, 0 0 30px #C4660F;
+            }
+
+            to {
+                box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #C4660F, 0 0 7px #C4660F, 0 0 8px #C4660F, 0 0 10px #C4660F, 0 0 15px #C4660F;
+            }
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 1s ease-in-out;
+            height: 100%;
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .slider-button.left {
+            left: 1rem;
+        }
+
+        .slider-button.right {
+            right: 1rem;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .slider-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background-color: white;
+        }
+
+        .button {
+            background-color: #AB8B7A;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #C4660F;
+            transform: translateY(-2px);
+        }
+
+        .button.inverted {
+            background-color: #AB8B7A;
+            color: white;
+        }
+
+        .button.inverted:hover {
+            background-color: #C4660F;
+        }
+
+        .button.copy-address {
+            background-color: white;
+            color: #AB8B7A;
+        }
+
+        .button.copy-address:hover {
+            background-color: #fdf2f8;
+            color: #C4660F;
+        }
+
+        .button.buy-pim {
+            background-color: white;
+            color: #AB8B7A;
+        }
+
+        .button.buy-pim:hover {
+            background-color: #fdf2f8;
+            color: #C4660F;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-link {
+            background-color: white;
+            color: #AB8B7A;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-link:hover {
+            background-color: #fce7f3;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 5rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #C4660F;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-container {
+            background-color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @media (min-width: 768px) {
+            .story-container {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        }
+
+        .story-image {
+            flex: 1;
+            min-height: 300px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-content h3 {
+            font-size: 2.5rem;
+            color: #AB8B7A;
+            margin-bottom: 1rem;
+        }
+
+        .story-content p {
+            font-size: 1.25rem;
+            color: #594E4A;
+            margin-bottom: 1.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1 / 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .how-to-buy-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translateZ(-1px) scale(2);
+            z-index: 0;
+            opacity: 0.2;
+        }
+
+        .how-to-buy {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .how-to-buy ol {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.25rem;
+            color: #594E4A;
+            margin-bottom: 2rem;
+        }
+
+        .how-to-buy li {
+            margin-bottom: 2rem;
+        }
+
+        .how-to-buy h3 {
+            font-size: 1.5rem;
+            color: #AB8B7A;
+            margin-bottom: 0.5rem;
+        }
+
+        .how-to-buy p {
+            font-size: 1.25rem;
+            color: #594E4A;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #AB8B7A;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+        .energy-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #F4EBDC;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .energy-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #AB8B7A;
+            animation: energyFlow 3s linear infinite;
+        }
+
+        @keyframes energyFlow {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .tiktok-videos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .tiktok-video {
+            max-width: 100%;
+        }
+
+        footer {
+            background-color: #4B5563;
+            color: #E5E7EB;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background-color: #AB8B7A;
+            z-index: 9999;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 767px) {
+            .hero-section {
+                padding-top: 4rem;
+            }
+
+            .slider {
+                height: 16rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .story-content h3 {
+                font-size: 2rem;
+            }
+
+            .story-content p {
+                font-size: 1rem;
+            }
+
+            .button {
+                font-size: 1.25rem;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .how-to-buy h3 {
+                font-size: 1.25rem;
+            }
+
+            .how-to-buy p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+<script type="module" src="end.js" defer></script>
+
+<body>
+    <div class="scroll-progress" style="width: 86.8182%;"></div>
+    <nav>
+        <div class="container">
+            <a href="#top" class="logo" id="logo-link">
+                <img src="lggg-MQY6Rl0KflAdkdOARK88WHWjFligv9.jpg" alt="Logo">
+            </a>
+            <div class="nav-links">
+                <a href="#story">ABOUT</a>
+                <a href="#mission">TOKENOMICS</a>
+                <a href="#buy">HOW TO BUY</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content container">
+            <div class="slider" id="top">
+                <div class="slider-container" style="transform: translateX(0%);">
+                    <img src="slide2.png" alt="1">
+
+
+                </div>
+                <button class="slider-button left">&lt;</button>
+                <button class="slider-button right">&gt;</button>
+                <div class="slider-dots">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <button id="copyAddress" class="button copy-address">$FRIC Airdrop is now LIVE</button>
+
+                <a style="cursor: pointer;"
+                    target="_blank" class="button buy-pim claimButton">
+                    Claim Airdrop</a>
+            </div>
+
+            <div class="social-links">
+                <a href="" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" target="_blank"
+                    class="social-link">
+                    <img src="dtv3sp8.png" width="24" height="24" alt="YouTube icon">
+                </a>
+                <a href="" target="_blank" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2 11 13"></path>
+                        <path d="M22 2 15 22 11 13 2 9 22 2z"></path>
+                    </svg>
+                </a>
+                <a href=""
+                    target="_blank" class="social-link">
+                    <img src="zzxNpvG.png" width="24" height="24" alt="Social icon">
+                </a>
+            </div>
+        </div>
+        <div class="hero-gradient"></div>
+    </section>
+    <style>
+        @media (max-width: 768px) {
+
+            /* Adjust breakpoint if needed */
+            .copy-address {
+                font-size: 12px;
+                /* Set your desired font size for mobile */
+            }
+        }
+    </style>
+
+    <main class="container">
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+
+
+
+    <iframe scrolling="no" frameborder="0" allowtransparency="true" src="index_2.html" title="Twitter settings iframe"
+        style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0"
+        allowtransparency="true" allowfullscreen="true"
+        style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium;"
+        title="Twitter analytics iframe" src="index_1.html"></iframe>
+</body>
+
+</html>
